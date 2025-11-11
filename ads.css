@@ -1,28 +1,79 @@
-.isiScroll, div {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  border: 0;
+  vertical-align: top;
+}
+
+body[class='160x600'] .banner {
+  width: 160px;
+  height: 600px;
+}
+body[class='300x250'] .banner {
+  width: 300px;
+  height: 250px;
+}
+body[class='300x600'] .banner {
+  width: 300px;
+  height: 600px;
+}
+body[class='970x250'] .banner {
+  width: 970px;
+  height: 250px;
+}
+body[class='728x90'] .banner {
+  width: 728px;
+  height: 90px;
+}
+
+body[class='160x600'] br[class]:not([class='160x600']),
+body[class='300x250'] br[class]:not([class='300x250']),
+body[class='300x600'] br[class]:not([class='300x600']),
+body[class='970x250'] br[class]:not([class='970x250']),
+body[class='728x90'] br[class]:not([class='728x90']) {
+  display: none;
+}
+
+.banner {
+  background: var(--body-bg-color, #fff);
+}
+
+.banner {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 1px solid var(--body-border-color, #000);
+  user-select: none;
+  -webkit-user-select: none;
+  opacity: 0;
+}
+
+#main_link {
+  position: absolute;
+  inset: -1px;
+  overflow: hidden;
   cursor: pointer;
 }
 
-.isiScroll div {
-  cursor: default;
+#main_link > * {
+  opacity: 0;
 }
 
-.isiScroll:not(.bnfy-enter) {
-  max-height: 100%;
+#main_link div {
+  position: absolute;
 }
+
+.isiScroll div { cursor: default; }
+.isiScroll:not(.bnfy-enter) { max-height: 100%; }
 
 .isiScroll {
-  box-sizing: border-box;
   overflow-x: hidden;
-  text-transform: initial;
-  background-color: #ffffff;
-}
-
-.isiScroll * {
-  box-sizing: border-box;
-}
-
-.isiScroll > *:not(b) {
-  padding: 0 !important;
+  background-color: var(--isi-bg-color, #fff);
 }
 
 #html {
@@ -38,7 +89,7 @@
   display: none;
 }
 
-.isiScroll>a {
+.isiScroll > a {
   display: block;
   padding: 6px 0;
 }
