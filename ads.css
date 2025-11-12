@@ -107,20 +107,17 @@ body[class='320x50'] br[class]:not([class='320x50']), {
 }
 
 .isiScroll > b:first-child, .isiScroll > b:first-child b {
-  display: block;
-  min-width: 6px;
-  min-height: 7px;
-  border-radius: 0;
+  min-width: 5px;
+  min-height: 5px;
   position: absolute;
   z-index: 1;
+  background: #fefefe;
 }
 
 .isiScroll > b:first-child {
   top: 15px;
   bottom: 15px;
   right: 0px;
-  min-width: 6px;
-  border: 1px solid #c3dcd7;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -131,7 +128,7 @@ body[class='320x50'] br[class]:not([class='320x50']), {
 
 .isiScroll > b:first-child b {
   cursor: pointer;
-  min-width: 4px;
+  background: #808080;
 }
 
 .isiScroll > b:first-child i {
