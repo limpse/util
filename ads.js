@@ -69,8 +69,6 @@ const Scroll = ({
   if (arrow) {
     const dir = by => e => scroll.by(by)
     when(sBar.appendChild(document.createElement('i')), 'mousedown', dir(-25))
-    .style.borderColor = `transparent transparent ${arrow}`
     when(sBar.appendChild(document.createElement('i')), 'mousedown', dir(25))
-    .style.borderColor = `${arrow} transparent transparent`
   }
 }
