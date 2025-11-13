@@ -39,11 +39,14 @@ const Scroll = ({
   let sRatio = sBar.clientHeight / sEl.scrollHeight
   scroll = {
     bar: _ => {
+      let view = sEl.scrollHeight - sEl.offsetHeight
+      if (scroll.end = scroll.end || (sEl.scrollTop >= view)) scroll.stop()
+      
       let h = sEl.offsetHeight * sBar.clientHeight / sEl.scrollHeight
       const thumb = parseFloat(slider) * (typeof slider === 'string' && slider.endsWith('%') ? sBar.clientHeight / 100 : 1)
       h = Math.round(h < thumb && thumb < sBar.clientHeight ? thumb : h)
       sTab.style.height = `${h}px`
-      sRatio = (sBar.clientHeight - h) / (sEl.scrollHeight - sEl.offsetHeight)
+      sRatio = (sBar.clientHeight - h) / view
       sTab.style.top = `${Math.abs(sEl.scrollTop * sRatio) || 0}px`
       sBox.classList[sEl.scrollTop > 10 ? 'add' : 'remove']('away')
     },
