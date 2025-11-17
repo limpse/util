@@ -73,7 +73,7 @@ body[class='320x50'] br[class]:not([class='320x50']) {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 100%;
+  width: 300px;
   z-index: 99;
   font-size: 10px;
   line-height: 1.1;
