@@ -1,5 +1,7 @@
-function animate() {}
-function load() { animate() }
+try { animate, load } catch {
+  function animate() {}
+  function load() { animate() }
+}
 
 const when = (el, e, cb, one) => el && e.split(' ').forEach(e => el.addEventListener(e, cb, one && { once: true })) || el
 
