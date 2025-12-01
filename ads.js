@@ -1,8 +1,3 @@
-try { animate, load } catch {
-  function animate() {}
-  function load() { animate() }
-}
-
 const when = (el, e, cb, one) => el && e.split(' ').forEach(e => el.addEventListener(e, cb, one && { once: true })) || el
 
 when(window, 'load', _ => {
@@ -11,7 +6,7 @@ when(window, 'load', _ => {
   ].map(img => new Promise((res, rej) => {
     img.onload = res
     img.src = img.dataset.src
-  }))).then(load)
+  }))).then(window.load || window.animate || _ => _)
   
   when(document.querySelector('.isiToggle'), 'click', _ =>
     document.querySelector('.banner')?.classList.toggle('active'))
