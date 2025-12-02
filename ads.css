@@ -32,7 +32,7 @@ body[class='320x50'] br[class]:not([class='320x50']) { display: none; }
 .isiScroll div { cursor: default; }
 .isiScroll > a { display: block; padding: 6px 0; }
 .isiScroll > b:first-child, .isiScroll > b:first-child b { min-width: 6px; min-height: 6px; background: lightgray; }
-.isiScroll > b:first-child { float: right; position: sticky; top: var(--sTop, 12px); --sBottom: var(--sTop); height: calc(100% - var(--sTop) - var(--sBottom)); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.isiScroll > b:first-child { float: right; position: sticky; --sTop: 12px; --sBottom: var(--sTop); top: var(--sTop); height: calc(100% - var(--sTop) - var(--sBottom)); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 .isiScroll > b:first-child b { position: absolute; cursor: pointer; background: gray; }
 .isiScroll > b:first-child i { position: absolute; margin: -12px -1px; cursor: pointer; z-index: 1; }
 .isiScroll > b:first-child i + i { bottom: 0; }
