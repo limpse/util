@@ -1,179 +1,38 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-img {
-  border: 0;
-  vertical-align: top;
-  max-width: var(--body-width, 100%);
-}
-body[class='160x600'] .banner {
-  width: 160px;
-  height: 600px;
-}
-body[class='300x250'] .banner {
-  width: 300px;
-  height: 250px;
-}
-body[class='300x600'] .banner {
-  width: 300px;
-  height: 600px;
-}
-body[class='970x250'] .banner {
-  width: 970px;
-  height: 250px;
-}
-body[class='728x90'] .banner {
-  width: 728px;
-  height: 90px;
-}
-body[class='320x50'] .banner {
-  width: 320px;
-  height: 50px;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+img { border: 0; vertical-align: top; max-width: var(--body-width, 100%); }
+body[class='160x600'] .banner { width: 160px; height: 600px; }
+body[class='300x250'] .banner { width: 300px; height: 250px; }
+body[class='300x600'] .banner { width: 300px; height: 600px; }
+body[class='970x250'] .banner { width: 970px; height: 250px; }
+body[class='728x90'] .banner { width: 728px; height: 90px; }
+body[class='320x50'] .banner { width: 320px; height: 50px; }
 body[class='160x600'] br[class]:not([class='160x600']),
 body[class='300x250'] br[class]:not([class='300x250']),
 body[class='300x600'] br[class]:not([class='300x600']),
 body[class='970x250'] br[class]:not([class='970x250']),
 body[class='728x90'] br[class]:not([class='728x90']),
-body[class='320x50'] br[class]:not([class='320x50']) {
-  display: none;
-}
-.banner {
-  background: var(--body-bg-color, #fff);
-}
-.banner {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border: 1px solid var(--body-border-color, #000);
-  user-select: none;
-  -webkit-user-select: none;
-  opacity: 0;
-}
-.link {
-  cursor: pointer;
-}
-#main_link {
-  position: absolute;
-  inset: -1px;
-  overflow: hidden;
-  cursor: pointer;
-}
-#main_link > * {
-  opacity: 0;
-}
-#main_link div {
-  position: absolute;
-  overflow: hidden;
-}
-.isi {
-  display: grid;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 298px;
-  max-width: 100%;
-  z-index: 99;
-  font-size: 10px;
-  line-height: 1.1;
-  font-family: Arial, Helvetica, sans-serif;
-  transition: 0.5s ease-in-out;
-  -webkit-transition: 0.5s ease-in-out;
-}
-.isi ul {
-  margin-bottom: 6px;
-  padding-left: 12px;
-}
-.isi ul li {
-  display: block;
-  position: relative;
-}
-.isi ul li::before {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: -6px;
-  width: 3px;
-  height: 3px;
-  border-radius: 100%;
-  transform: translate(-50%, -50%);
-}
-.isi sup {
-  top: -1px;
-  font-size: 50%;
-  position: relative;
-}
-.isiToggle {
-  float: right;
-  cursor: pointer;
-}
-.isiToggle:after {
-  content: '+';
-  line-height: 0;
-  vertical-align: middle;
-}
-.banner.active .isi {
-  height: 100%;
-}
-.banner.active .isiToggle:after {
-  content: '–';
-}
-#html {
-  display: block;
-  max-height: 100%;
-  overflow-x: hidden;
-  word-break: break-word;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-#html::-webkit-scrollbar,
-.isiScroll::-webkit-scrollbar {
-  display: none;
-}
-.isiScroll {
-  position: relative;
-  height: 100%;
-  max-height: 100%;
-  overflow: hidden;
-  background-color: var(--isi-bg-color, #fff);
-}
-.isiScroll div {
-  cursor: default;
-}
-.isiScroll > a {
-  display: block;
-  padding: 6px 0;
-}
-.isiScroll > b:first-child, .isiScroll > b:first-child b {
-  min-width: 6px;
-  min-height: 6px;
-  position: absolute;
-  z-index: 1;
-  background: lightgray;
-}
-.isiScroll > b:first-child {
-  top: 15px;
-  bottom: 15px;
-  right: 2px;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.isiScroll > b:first-child b {
-  cursor: pointer;
-  background: gray;
-}
-.isiScroll > b:first-child i {
-  position: absolute;
-  margin: -12px -1px;
-  cursor: pointer;
-  z-index: 1;
-}
-.isiScroll > b:first-child i + i {
-  bottom: 0;
-}
+body[class='320x50'] br[class]:not([class='320x50']) { display: none; }
+.banner { background: var(--body-bg-color, #fff); }
+.banner { position: absolute; inset: 0; overflow: hidden; border: 1px solid var(--body-border-color, #000); user-select: none; -webkit-user-select: none; opacity: 0; }
+.link { cursor: pointer; }
+#main_link { position: absolute; inset: -1px; overflow: hidden; cursor: pointer; }
+#main_link > * { opacity: 0; }
+#main_link div { position: absolute; overflow: hidden; }
+.isi { display: grid; position: absolute; right: 0; bottom: 0; width: 298px; max-width: 100%; z-index: 99; font-size: 10px; line-height: 1.1; font-family: Arial, Helvetica, sans-serif; transition: 0.5s ease-in-out; -webkit-transition: 0.5s ease-in-out; }
+.isi ul { margin-bottom: 6px; padding-left: 12px; }
+.isi ul li { display: block; position: relative; }
+.isi ul li::before { content: ''; position: absolute; top: 6px; left: -6px; width: 3px; height: 3px; border-radius: 100%; transform: translate(-50%, -50%); }
+.isi sup { top: -1px; font-size: 50%; position: relative; }
+.isiToggle { float: right; cursor: pointer; }
+.isiToggle:after { content: '+'; line-height: 0; vertical-align: middle; }
+.banner.active .isi { height: 100%; }
+.banner.active .isiToggle:after { content: '–'; }
+.isiScroll::-webkit-scrollbar { display: none; }
+.isiScroll { position: relative; height: 100%; max-height: 100%; overflow-x: hidden; background-color: var(--isi-bg-color, #fff); word-break: break-word; -ms-overflow-style: none; scrollbar-width: none; }
+.isiScroll div { cursor: default; }
+.isiScroll > a { display: block; padding: 6px 0; }
+.isiScroll > b:first-child, .isiScroll > b:first-child b { min-width: 6px; min-height: 6px; background: lightgray; }
+.isiScroll > b:first-child { float: right; position: sticky; top: var(--sTop, 12px); --sBottom: var(--sTop); height: calc(100% - var(--sTop) - var(--sBottom)); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.isiScroll > b:first-child b { position: absolute; cursor: pointer; background: gray; }
+.isiScroll > b:first-child i { position: absolute; margin: -12px -1px; cursor: pointer; z-index: 1; }
+.isiScroll > b:first-child i + i { bottom: 0; }
