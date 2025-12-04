@@ -23,7 +23,7 @@ const Scroll = ({
   slider = 8,
   delay,
   speed,
-  stopOnMove = true,
+  stopOnMove = _ => _,
   stopOnClick = false,
 }) => {
   const sBox = document.querySelector('.isiScroll'),
@@ -55,7 +55,11 @@ const Scroll = ({
   when(isi, 'transitionEnd mozTransitionEnd webkitTransitionEnd', scroll.bar)
   when(sBox, event, scroll.bar)
   when(sBox, 'scroll', scroll.bar)
-  when(sBox, `${stopOnClick ? 'click touchstart' : ''} ${stopOnMove ? 'touchmove' : ''} mousewheel DOMMouseScroll`, scroll.stop)
+  when(sBox, `${stopOnClick ? 'click touchstart' : ''} ${stopOnMove ? 'touchmove' : ''} mousewheel DOMMouseScroll`, _ => {
+    if (typeof stopOnMove == 'function') stopOnMove()
+    if (typeof stopOnClick == 'function') stopOnClick()
+    scroll.stop()
+  })
   when(sBar, 'mousedown', _ => when(document, 'mouseup', scroll.stop))
   if (!event) scroll.play()
   else when(document.querySelector(on) || sBox, event, scroll.play , true)
