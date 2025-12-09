@@ -3,7 +3,7 @@ const when = (el, e, cb, one) => el && e.split(' ').forEach(e => el.addEventList
 
 when(window, 'load', _ => {
   Promise.all([
-    ...document.querySelectorAll('img[data-src]')
+    ...document.querySelectorAll('[data-src]')
   ].map(img => new Promise((res, rej) => {
     img.onload = res
     img.src = img.dataset.src
