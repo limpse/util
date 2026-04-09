@@ -52,7 +52,7 @@ const Scroll = ({
   }
   scroll.bar()
 
-  when(sBox, 'click', e => e.target.tagName !== 'a' && (stopOnClick || e.stopPropagation)())
+  when(sBox, 'click', e => e.target.tagName !== 'a' && (onClick ? onClick() : e.stopPropagation()))
   when(isi, 'transitionEnd mozTransitionEnd webkitTransitionEnd', scroll.bar)
   when(sBox, event, scroll.bar)
   when(sBox, 'scroll', scroll.bar)
