@@ -11,7 +11,19 @@ body[class='300x250'] br[class]:not([class='300x250']),
 body[class='300x600'] br[class]:not([class='300x600']),
 body[class='970x250'] br[class]:not([class='970x250']),
 body[class='728x90'] br[class]:not([class='728x90']),
-body[class='320x50'] br[class]:not([class='320x50']) { display: none; }
+body[class='320x50'] br[class]:not([class='320x50']),
+body[class='160x600'] [show]:not([show~='160x600']),
+body[class='300x250'] [show]:not([show~='300x250']),
+body[class='300x600'] [show]:not([show~='300x600']),
+body[class='970x250'] [show]:not([show~='970x250']),
+body[class='728x90'] [show]:not([show~='728x90']),
+body[class='320x50'] [show]:not([show~='320x50']),
+body[class='160x600'] [hide~='160x600'],
+body[class='300x250'] [hide~='300x250'],
+body[class='300x600'] [hide~='300x600'],
+body[class='970x250'] [hide~='970x250'],
+body[class='728x90'] [hide~='728x90'],
+body[class='320x50'] [hide~='320x50'] { display: none; }
 .banner { background: var(--body-bg-color, #fff); }
 .banner { position: absolute; inset: 0; overflow: hidden; border: 1px solid var(--body-border-color, #000); user-select: none; -webkit-user-select: none; opacity: 0; }
 .link { cursor: pointer; }
